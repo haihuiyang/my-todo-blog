@@ -50,7 +50,7 @@ AbstractOwnableSynchronizer 可以通过这个接口定义的方法知道是谁�
 
 
 
-6、条件队列？主队列？
+6、条件队列？主队列？Condition Queue 和 Sync Queue
 
 
 
