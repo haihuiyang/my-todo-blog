@@ -69,7 +69,7 @@ run() 方法执行完成，线程结束执行，此时的线程状态。
 
 ![线程的状态转换](https://tva1.sinaimg.cn/large/006tNbRwgy1gaxmvaut9wj30wn0u0jvt.jpg)
 
-### 3、如果通过代码展示上述几个状态
+### 3、如何通过代码展示上述几个状态
 
 #### （1）NEW（新建）
 
