@@ -71,6 +71,8 @@ next，入队完成之后的下一步才设置 next，所以如果一个节点�
 
 
 
+9、spinForTimeoutThreshold：时间阈值，当线程 park 的时间没有超过这个时间阈值，直接自旋，不会 park 线程。因为 park 线程的时间损耗比自旋要高。
+
 
 
 
