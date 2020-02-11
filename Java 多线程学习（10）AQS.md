@@ -71,6 +71,40 @@ next，入队完成之后的下一步才设置 next，所以如果一个节点�
 
 
 
+SIGNAL：代表当前节点的后继节点的状态是 blocked （或即将 blocked）
+
+> 即将 blocked：可以参看 acquireQueued 实现
+>
+> ```java
+>     final boolean acquireQueued(final Node node, int arg) {
+>         boolean failed = true;
+>         try {
+>             boolean interrupted = false;
+>             for (;;) {
+>                 final Node p = node.predecessor();
+>                 if (p == head && tryAcquire(arg)) {
+>                     setHead(node);
+>                     p.next = null; // help GC
+>                     failed = false;
+>                     return interrupted;
+>                 }
+>                 if (shouldParkAfterFailedAcquire(p, node) &&
+>                     parkAndCheckInterrupt())
+>                     interrupted = true;
+>             }
+>         } finally {
+>             if (failed)
+>                 cancelAcquire(node);
+>         }
+>     }
+> ```
+>
+> 在 shouldParkAfterFailedAcquire 为 true 之后，才会 parkAndCheckInterrupt；shouldParkAfterFailedAcquire 为 true 的标识就是将当前节点的前驱节点的 waitStatus 设置成 SIGNAL，然后在自己 park 自己。所以如果在这个时候，还没有 park 的。又根据 unpark 的特点，这里只需要 unpark 就好了，不用考虑后继节点时候已经调用了 park。不论什么时候调用，只要调用了 unpark，都会唤醒后继节点。
+
+
+
+
+
 9、spinForTimeoutThreshold：时间阈值，当线程 park 的时间没有超过这个时间阈值，直接自旋，不会 park 线程。因为 park 线程的时间损耗比自旋要高。
 
 
@@ -227,3 +261,18 @@ signal() 将等待时间最长的（第一个节点）从条件等待队列移�
 signalAll() 和上面一样，不过是将所有的节点
 
 awaitUninterruptibly() 不可中断条件等待
+
+
+
+
+
+![image-20200121092110179](/Users/happyfeet/projects/my-todo-blog/pictures/await 方法解析.png)
+
+
+
+
+
+
+
+
+
