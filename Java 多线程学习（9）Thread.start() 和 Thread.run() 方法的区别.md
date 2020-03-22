@@ -1,3 +1,17 @@
+> 转载请注明原创出处，谢谢！
+>
+> [HappyFeet的博客](https://blog.csdn.net/haihui_yang)
+
+
+
+
+
+---
+
+
+
+
+
 1、`openjdk/jdk/src/share/native/java/lang/Thread.c`
 
 注册了一堆 native 方法，其中，start0 对应的是 JVM_StartThread 方法
@@ -209,3 +223,16 @@ void JavaThread::thread_main_inner() {
 
 Java 的线程是通过映射到系统的原生线程上来实现的。
 
+
+
+
+
+尾巴：
+
+
+
+参考资料：
+
+（1）
+
+（2）

@@ -1,4 +1,22 @@
- 队列同步器AbstractQueuedSynchronizer（以下简称同步器），是用来构建锁或者其他同步组件的基础框架。
+> 转载请注明原创出处，谢谢！
+>
+> [HappyFeet的博客](https://blog.csdn.net/haihui_yang)
+
+
+
+http://gee.cs.oswego.edu/dl/papers/aqs.pdf
+
+Doug Lea 写的描述关于 AQS 框架的原理、设计、实现、使用以及性能方面的内容。
+
+
+
+---
+
+ 
+
+
+
+队列同步器AbstractQueuedSynchronizer（以下简称同步器），是用来构建锁或者其他同步组件的基础框架。
 
 
 
@@ -273,6 +291,16 @@ awaitUninterruptibly() 不可中断条件等待
 
 
 
+
+尾巴：
+
+
+
+参考资料：
+
+（1）
+
+（2）
 
 
 

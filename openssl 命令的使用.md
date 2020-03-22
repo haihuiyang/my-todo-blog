@@ -10,6 +10,10 @@
 
 
 
+```shell
+openssl rsautl -encrypt -in before.txt -inkey public.pem -pubin -out after.txt
+```
+
 
 
 
@@ -20,6 +24,6 @@
 
 参考资料：
 
-（1）资料 A
+（1）
 
-（2）资料 B
+（2）
