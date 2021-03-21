@@ -4,6 +4,8 @@
 
 说来惭愧，又挺久没更新博客了。
 
+其实上面这句话是差不多一年前就写好了的，现在来看，这样表述也没什么问题，确实是挺久挺久没更新博客了。
+
 
 
 ---
@@ -18,7 +20,7 @@ Lock：monitor
 
 同一个锁上多个 wait set，这是 object monitor 所做不到的
 
-Lock，提供了比 synchronized 更多的使用方式
+Lock，提供了比 synchronized 更多的使用方式（更灵活，也带来了更多的风险，使用时需谨慎）
 
 synchronized 的使用限制，催生了 Lock 和 Condition 的出现。
 
