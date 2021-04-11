@@ -2,15 +2,11 @@
 >
 > [HappyFeet的博客](https://blog.csdn.net/haihui_yang)
 
+Thread.start()：启动一个新线程，这个新起的线程会执行 Thread.run() 方法；
 
-
-
+Thread.run()：和普通方法一样。
 
 ---
-
-
-
-
 
 1、`openjdk/jdk/src/share/native/java/lang/Thread.c`
 
@@ -53,8 +49,6 @@ static void thread_entry(JavaThread* thread, TRAPS) {
 `openjdk/hotspot/src/share/vm/runtime/thread.cpp`
 
 （3）Thread::start(native_thread);
-
-
 
 2、
 
@@ -217,13 +211,11 @@ void JavaThread::thread_main_inner() {
 
 
 
-所以线程在执行完 run() 方法之后，就会退出！可以思考一下线程池里面如何做到 core 线程一直 alive 的！
-
-
+所以线程在执行完 run() 方法之后，就会退出！可以思考一下线程池里面如何做到 core 线程一直 alive 的！（Worker => 实现的 run 方法是一个死循环）
 
 Java 的线程是通过映射到系统的原生线程上来实现的。
 
-
+Thread.start() -> native 方法 -> C++ 调用系统原生线程 -> 调用 run 方法 -> run 方法结束 -> 线程结束
 
 
 

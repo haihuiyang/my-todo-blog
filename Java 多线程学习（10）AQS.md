@@ -8,17 +8,11 @@ http://gee.cs.oswego.edu/dl/papers/aqs.pdf
 
 Doug Lea 写的描述关于 AQS 框架的原理、设计、实现、使用以及性能方面的内容。
 
-
-
 ---
-
- 
-
-
 
 队列同步器AbstractQueuedSynchronizer（以下简称同步器），是用来构建锁或者其他同步组件的基础框架。
 
-
+![ObjectMonitor 对象示意图](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdx3u3y7gbj30qw0oen23.jpg)
 
 AbstractQueuedSynchronizer：
 
@@ -282,13 +276,7 @@ awaitUninterruptibly() 不可中断条件等待
 
 
 
-
-
-![image-20200121092110179](/Users/happyfeet/projects/my-todo-blog/pictures/await 方法解析.png)
-
-
-
-
+![image-20200121092110179](./pictures/await 方法解析.png)
 
 
 
